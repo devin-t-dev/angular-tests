@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DayEvent} from "../day.model";
 
 @Component({
@@ -7,18 +7,19 @@ import {DayEvent} from "../day.model";
   styleUrls: ['./month-day.component.css']
 })
 export class MonthDayComponent implements OnInit {
-  day: string;
-  events: DayEvent[];
+  @Input() day: string;
+  @Input() events: DayEvent[];
 
   /**
    * Construct this component
-   * @param title
-   * @param description
-   * @param date
+   * @param events
+   * @param day
    */
-  constructor(events: DayEvent[], day: string) {
-    this.events = events;
-    this.day=day;
+  constructor(/*events: DayEvent[], day: string*/) {
+    // this.events = events;
+    // this.day=day;
+    this.day = "2021-07-19";
+    this.events = Array.of(new DayEvent('Test', 'Description', '2021-07-19'));
   }
 
   ngOnInit(): void {

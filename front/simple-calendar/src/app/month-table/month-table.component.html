@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor="let row of [0,1,2,4]">
+    <td *ngFor="let column of [0,1,2,4,5,6]">
+      <app-month-day [day]="row"></app-month-day>
+    </td>
+  </tr>
+</table>
